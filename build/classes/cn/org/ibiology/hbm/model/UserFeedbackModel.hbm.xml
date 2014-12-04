@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+
+	<class name="cn.org.ibiology.hbm.model.UserFeedbackModel" table="_ibiology_users_feedback">
+		<id name="id" column="ID" type="java.lang.Integer">
+			<generator class="increment"></generator>
+		</id>
+
+		<property name="qq" column="QQ" type="java.lang.String" not-null="false"/>
+		<property name="mail" column="Mail" type="java.lang.String" not-null="false"/>
+		<property name="content" column="Content" type="java.lang.String" not-null="false"/>
+		<property name="isRead" column="ReadOrNot" type="java.lang.Boolean" not-null="true"/>
+
+	</class>
+</hibernate-mapping>

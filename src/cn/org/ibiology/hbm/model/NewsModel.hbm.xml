@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+
+	<class name="cn.org.ibiology.hbm.model.NewsModel" table="_ibiology_news_info">
+		<id name="id" column="NewsID" type="java.lang.Integer">
+			<generator class="increment"></generator>
+		</id>
+
+		<property name="newsTitle" column="NewsTitle" type="java.lang.String" not-null="true"/>
+		<property name="newsContent" column="NewsContent" type="java.lang.String" not-null="true"/>
+		<property name="newsFrom" column="NewsFrom" type="java.lang.String" not-null="true"/>
+		<property name="newsWriter" column="NewsWriter" type="java.lang.String" not-null="true"/>
+		<property name="newsChecker" column="NewsChecker" type="java.lang.String" not-null="true"/>
+		<property name="newsTime" column="NewsTime" type="java.util.Date" not-null="true"/>
+		<property name="newsVisited" column="NewsVisited" type="java.lang.Integer" not-null="true"/>
+
+	</class>
+</hibernate-mapping>
