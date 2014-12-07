@@ -26,11 +26,9 @@
         <script src="./css/ie/respond.min.js"></script>
     <![endif]-->
 	<style type="text/css">
-		.panel-heading{
-			padding:3px 15px;
-		}
-		.panel-body{
-			padding:12px;
+		.panel-heading small{
+			font-size:16px;
+			float: right;
 		}
 		.new-time{
 			color:#CDCDCD;
@@ -138,12 +136,12 @@
         <!-- Content Row -->
         <div class="row">
             <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                     	<h4><i class="fa fa-fw fa-bullhorn"></i> 通知新闻</h4>
-                    </div>
-                    <div class="panel-body">
-                    	<ul class="list-unstyled">
+            	<div class="panel panel-info">
+	            	<div class="panel-heading">
+	              		<h2 class="panel-title"><i class="fa fa-fw fa-bullhorn"></i> 通知新闻<small><a href="">more&nbsp;&raquo;</a></small></h2>
+	            	</div>
+		            <div class="panel-body">
+		            	<ul class="list-unstyled">
                         	<li><a href="show-news.jsp">360°生命物语上线</a><span class="new-time">[10-16 22:24]</span></li>
                         	<li><a href="#">测试数据</a><span class="new-time">[10-16 22:22]</span></li>
                         	<li><a href="#">测试数据</a><span class="new-time">[10-16 23:22]</span></li>
@@ -151,18 +149,17 @@
                         	<li><a href="#">测试数据</a><span class="new-time">[10-16 20:22]</span></li>
                         	<li><a href="#">测试数据</a><span class="new-time">[10-16 20:22]</span></li>
                         </ul>
-                        <a href="show-list.jsp" class="btn btn-default" style="float:right;">查看更多&raquo;</a>
-                    </div>
-                </div>
+		            </div>
+            	</div>
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-database"></i> 数据更新</h4>
-                    </div>
-                    <div class="panel-body">
-                    	<ul class="list-unstyled">
+            	<div class="panel panel-info">
+	            	<div class="panel-heading">
+	              		<h2 class="panel-title"><i class="fa fa-database"></i> 数据更新<small><a href="">more&nbsp;&raquo;</a></small></h2>
+	            	</div>
+		            <div class="panel-body">
+		            	<ul class="list-unstyled">
                         	<li><a href="#">liushaofeng更新"文竹"数据</a><span class="new-time">[10-16 22:24]</span></li>
                         	<li><a href="#">admin更新"玫瑰花"数据</a><span class="new-time">[10-16 22:22]</span></li>
                         	<li><a href="#">admin更新"三角梅"数据</a><span class="new-time">[10-16 23:22]</span></li>
@@ -170,18 +167,17 @@
                         	<li><a href="#">admin更新"梅花"数据</a><span class="new-time">[10-16 12:22]</span></li>
                         	<li><a href="#">admin更新"梅花"数据</a><span class="new-time">[10-16 12:22]</span></li>
                         </ul>
-                        <a href="show-list.jsp" class="btn btn-default" style="float:right;">查看更多&raquo;</a>
-                    </div>
-                </div>
+		            </div>
+            	</div>
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-4">
-            	<div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-plus"></i> 欠缺资料</h4>
-                    </div>
-                    <div class="panel-body">
-                    	<ul class="list-unstyled">
+            	<div class="panel panel-info">
+	            	<div class="panel-heading">
+	              		<h2 class="panel-title"><i class="fa fa-plus"></i> 欠缺资料<small><a href="">more&nbsp;&raquo;</a></small></h2>
+	            	</div>
+		            <div class="panel-body">
+		            	<ul class="list-unstyled">
                         	<li><a href="#">数据库欠缺"绿萝"的资料</a><span class="new-time">[10-16 22:24]</span></li>
                         	<li><a href="#">测试数据</a><span class="new-time">[10-16 22:22]</span></li>
                         	<li><a href="#">测试数据</a><span class="new-time">[10-16 23:22]</span></li>
@@ -189,9 +185,8 @@
                         	<li><a href="#">测试数据</a><span class="new-time">[10-16 12:22]</span></li>
                         	<li><a href="#">测试数据</a><span class="new-time">[10-16 12:22]</span></li>
                         </ul>
-                        <a href="show-list.jsp" class="btn btn-default" style="float:right;">查看更多&raquo;</a>
-                    </div>
-                </div>
+		            </div>
+            	</div>
             </div>
             <!-- /.col-md-4 -->
         </div>
