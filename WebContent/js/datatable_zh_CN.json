@@ -1,7 +1,7 @@
 {
     "sProcessing":   "处理中...",
-    "sLengthMenu":   "每页 _MENU_ 条记录",
-    "sZeroRecords":  "没有匹配的记录",
+    "sLengthMenu":   "_MENU_ 记录/页",
+    "sZeroRecords":  "没有查询到相关数据",
     "sInfo":         "显示第 _START_ 至 _END_ 项记录，共 _TOTAL_ 项",
     "sInfoEmpty":    "显示第 0 至 0 项记录，共 0 项",
     "sInfoFiltered": "(由 _MAX_ 项记录过滤)",
