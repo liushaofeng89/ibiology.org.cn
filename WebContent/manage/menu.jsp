@@ -39,6 +39,7 @@
 		</li>
 	</ul>
 </div>
+
 <!-- /.navbar-collapse -->
 <script type="text/javascript">
 	$(document).ready(function(){

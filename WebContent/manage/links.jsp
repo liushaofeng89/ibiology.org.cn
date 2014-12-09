@@ -17,7 +17,82 @@
     <!-- Custom Fonts -->
     <link href="../resource/Font-Awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-    
+    <!-- jQuery Version 1.11.0 -->
+    <script src="../js/jquery-1.11.0.js" type="text/javascript"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- DataTables JavaScript -->
+    <script src="../js/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="../js/dataTables.bootstrap.js" type="text/javascript"></script>
+	<script src="../js/bootstrap-datetimepicker.js" type="text/javascript" charset="UTF-8"></script>
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script type="text/javascript">
+	    $(document).ready(function() {
+	    	loadTabel();
+	    	$('.form_date').datetimepicker({
+	            //language:  'fr',
+	            weekStart: 1,
+	            todayBtn:  1,
+	    		autoclose: 1,
+	    		todayHighlight: 1,
+	    		startView: 2,
+	    		minView: 2,
+	    		forceParse: 0
+	        });
+	    });
+	    function loadTabel()
+	    {
+	    	$.ajax({
+	 		   type: "GET",
+	 		   url: "/ibiology/LinksService",
+	 		   dataType:"json",
+	 		   success: function(msg){
+	 		     	$("#linksData").html("");
+	 		     	$("#linksData").append("");
+	 		   }
+	 		});
+	    	$('#dataTables-example').dataTable({        				
+				"oLanguage": {
+				"sUrl": "../js/datatable_zh_CN.json"
+			} 
+			});
+	    }
+	    
+	    function saveData()
+	    {
+	        var siteName=$("#siteName").val();
+			if( $.trim(siteName)=="")
+			{
+				$("#msg").text("网站名称不能为空！");
+			}
+	        var siteAddress=$("#siteAddress").val();
+	        if( $.trim(siteAddress)=="")
+			{
+	        	$("#msg").text("网站地址不能为空！");
+			}
+	        var effectiveTime=$("#time").val();
+	        if( $.trim(effectiveTime)=="")
+			{
+	        	$("#msg").text("网站有效时间不能为空！");
+			}
+	
+	    	$.ajax({
+	    		   type: "POST",
+	    		   url: "/ibiology/LinksService",
+	    		   data: "siteName="+siteName+"&siteAddress="+siteAddress+"&effectiveTime="+effectiveTime,
+	    		   success: function(msg){
+	    		     	if(msg=="SUCCESS")
+	    		     	{
+							loadTabel();
+	            		}
+	            		else
+	            		{
+	            			$("#msg").text(msg);
+	                	}
+	    		   }
+	    		});
+	    }
+    </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -118,12 +193,15 @@
 					      <label for="lastname" class="col-sm-2 control-label">有效时间</label>
 					      <div class="col-sm-10">
 					         <div class="input-group date form_date col-md-12" data-date="2014-12-08T23:30:07Z" data-date-format="yyyy-MM-dd HH:mm:ss">
-				             	<input class="form-control" size="16" type="text" value="" readonly>
+				             	<input class="form-control" size="16" id="time" type="text" value="" readonly>
 				             	<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
 				             </div>
 							 <input type="hidden" id="dtp_input1" value="" />
 					      </div>
+					   </div>
+					   <div class="form-group">
+					      <label class="col-sm-12 control-label" style="margin-left: 10px;"><code style="float: left" id="msg"></code></label>
 					   </div>
 					</form>
 	         </div>
@@ -133,40 +211,5 @@
 	         </div>
 	      </div><!-- /.modal-content -->
 	</div><!-- /.modal -->
-
-	<!-- jQuery Version 1.11.0 -->
-    <script src="../js/jquery-1.11.0.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- DataTables JavaScript -->
-    <script src="../js/jquery.dataTables.js"></script>
-    <script src="../js/dataTables.bootstrap.js"></script>
-	<script src="../js/bootstrap-datetimepicker.js" type="text/javascript" charset="UTF-8"></script>
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('#dataTables-example').dataTable({        				
-			"oLanguage": {
-			"sUrl": "../js/datatable_zh_CN.json"
-		} 
-		});
-    });
-    $('.form_date').datetimepicker({
-        language:  'fr',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		minView: 2,
-		forceParse: 0
-    });
-    function saveData()
-    {
-        
-    }
-    </script>
-
 </body>
-
 </html>

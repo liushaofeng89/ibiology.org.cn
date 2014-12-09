@@ -11,8 +11,8 @@
 
 		<property name="siteName" column="SiteName" type="java.lang.String" not-null="true"/>
 		<property name="siteDomain" column="SiteDomain" type="java.lang.String" not-null="true"/>
-		<property name="data" column="CreateTime" type="java.util.Date" not-null="true"/>
-		<property name="effectiveTime" column="EffectiveTime" type="java.lang.Long" not-null="true"/>
+		<property name="createDate" column="CreateTime" type="java.util.Date" not-null="true"/>
+		<property name="effectiveTime" column="EffectiveTime" type="java.util.Date" not-null="true"/>
 
 	</class>
 </hibernate-mapping>

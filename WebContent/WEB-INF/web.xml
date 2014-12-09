@@ -118,6 +118,13 @@
 		<servlet-name>UserFeedbackService</servlet-name>
 		<servlet-class>cn.org.ibiology.service.UserFeedbackService</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>IbiologyLinksService</display-name>
+		<servlet-name>IbiologyLinksService</servlet-name>
+		<servlet-class>cn.org.ibiology.service.IbiologyLinksService</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>WelcomeService</servlet-name>
 		<url-pattern>/WelcomeService</url-pattern>
@@ -153,6 +160,10 @@
 	<servlet-mapping>
 		<servlet-name>UserFeedbackService</servlet-name>
 		<url-pattern>/UserFeedback</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>IbiologyLinksService</servlet-name>
+		<url-pattern>/LinksService</url-pattern>
 	</servlet-mapping>
 
 

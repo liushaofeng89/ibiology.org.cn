@@ -1,5 +1,6 @@
 package cn.org.ibiology.hbm.model;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -7,13 +8,28 @@ import java.util.Date;
  * @author liushaofeng
  * @date 2014-12-8
  */
-public class LinksModel
+public class LinksModel extends AbstractModel
 {
 	private int id;
 	private String siteName;
 	private String siteDomain;
-	private Date data;
-	private long effectiveTime;
+	private Date createDate;
+	private Date effectiveTime;
+
+	/**
+	 * constructor
+	 * 
+	 * @param siteName Site Name
+	 * @param siteAddress Site Address
+	 * @param effectiveTime Effective Time
+	 */
+	public LinksModel(String siteName, String siteAddress, Date effectiveTime)
+	{
+		this.siteName = siteName;
+		this.siteDomain = siteAddress;
+		this.createDate = Calendar.getInstance().getTime();
+		this.effectiveTime = effectiveTime;
+	}
 
 	public int getId()
 	{
@@ -45,22 +61,22 @@ public class LinksModel
 		this.siteDomain = siteDomain;
 	}
 
-	public Date getData()
+	public Date getCreateDate()
 	{
-		return data;
+		return createDate;
 	}
 
-	public void setData(Date data)
+	public void setCreateDate(Date createDate)
 	{
-		this.data = data;
+		this.createDate = createDate;
 	}
 
-	public long getEffectiveTime()
+	public Date getEffectiveTime()
 	{
 		return effectiveTime;
 	}
 
-	public void setEffectiveTime(long effectiveTime)
+	public void setEffectiveTime(Date effectiveTime)
 	{
 		this.effectiveTime = effectiveTime;
 	}

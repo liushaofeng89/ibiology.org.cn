@@ -56,6 +56,24 @@ public final class DateUtil
 			return null;
 		}
 	}
+	
+	/**
+	 * 解析指定字符串为Date对象
+	 * @param time 时间字符串
+	 * @return 解析后的日期对象
+	 */
+	public static Date strToDate(String time)
+	{
+		try
+		{
+			return sdf.parse(time);
+		}
+		catch (ParseException e)
+		{
+			Logger.getLogger(DateUtil.class).error(e.getMessage(),e);
+			return null;
+		}
+	}
 
 	/**
 	 * 将日期对象转换成指定的字符串格式

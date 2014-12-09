@@ -26,5 +26,6 @@
          <!-- 添加实体类的映射文件-->
         <mapping resource="cn/org/ibiology/hbm/model/NewsModel.hbm.xml" />
         <mapping resource="cn/org/ibiology/hbm/model/UserFeedbackModel.hbm.xml" />
+        <mapping resource="cn/org/ibiology/hbm/model/LinksModel.hbm.xml" />
     </session-factory>
 </hibernate-configuration>
