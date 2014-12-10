@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!-- 百度统计代码 -->
+<!-- 百度统计代码 开始-->
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -9,6 +9,11 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+<!-- 百度统计代码结束 -->
+
+<!-- 品牌宝可信网站开始 -->
+<a key ="54880d54efbfb01faf756085" logo_style="fixed"  href="http://www.anquan.org" ><script src="http://static.anquan.org/static/outer/js/aq_auth.js"></script></a>
+<!-- 品牌宝可信网站结束 -->
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
