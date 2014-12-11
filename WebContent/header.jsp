@@ -26,7 +26,7 @@ var _hmt = _hmt || [];
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<%=request.getContextPath()%>/index">360°生命物语</a>
+			<a class="navbar-brand" style="padding:0;" href="<%=request.getContextPath()%>/index"><img src="resource/img/site/logo.png" /></a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
