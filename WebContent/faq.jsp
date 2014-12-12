@@ -9,6 +9,8 @@
 
 
     <title>360°生命物语 | 常见问答</title>
+    
+    <link rel="shortcut icon" href="resource/img/site/favicon.ico" type="image/x-icon" />
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

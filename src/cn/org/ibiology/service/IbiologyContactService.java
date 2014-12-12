@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class FAQService
  */
-public class FAQService extends HttpServlet
+public class IbiologyContactService extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public FAQService()
+	public IbiologyContactService()
 	{
 		super();
 		// TODO Auto-generated constructor stub
@@ -28,7 +28,7 @@ public class FAQService extends HttpServlet
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		request.getRequestDispatcher("faq.jsp").forward(request, response);
+		request.getRequestDispatcher("contact.jsp").forward(request, response);
 	}
 
 	/**

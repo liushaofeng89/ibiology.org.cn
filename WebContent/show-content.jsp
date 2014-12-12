@@ -10,6 +10,8 @@
 
 
     <title>360°生命物语 | 植物介绍之梅花</title>
+    
+    <link rel="shortcut icon" href="resource/img/site/favicon.ico" type="image/x-icon" />
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

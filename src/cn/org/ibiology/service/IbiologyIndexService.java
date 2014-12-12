@@ -1,34 +1,40 @@
 package cn.org.ibiology.service;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.org.ibiology.hbm.model.IbiologyIndexModel;
+
 /**
- * Servlet implementation class FAQService
+ * 网站首页数据处理服务类
+ * @author liushaofeng
+ * @date 2014-12-12
  */
-public class ContactService extends HttpServlet
+public class IbiologyIndexService extends HttpServlet
 {
+	public static final String INDEX_DATA_KEY = "INDEX_DATA_KEY";
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ContactService()
+	public IbiologyIndexService()
 	{
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * 初始化首页数据，跳转页面
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		request.getRequestDispatcher("contact.jsp").forward(request, response);
+		IbiologyIndexModel indexModel = IbiologyIndexModel.getInstance();
+		getServletContext().setAttribute(INDEX_DATA_KEY, indexModel);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	/**
@@ -38,7 +44,6 @@ public class ContactService extends HttpServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
 			IOException
 	{
-		// TODO Auto-generated method stub
 	}
 
 }

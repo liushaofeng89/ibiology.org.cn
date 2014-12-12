@@ -10,16 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
-
 import cn.org.ibiology.hbm.dao.LinksDAO;
-import cn.org.ibiology.hbm.model.AbstractModel;
 import cn.org.ibiology.hbm.model.LinksModel;
 import cn.org.ibiology.util.DateUtil;
 
+import com.google.gson.Gson;
+
 /**
  * 友情链接服务类
- * 
  * @author liushaofeng
  * @date 2014-12-9
  */
@@ -42,7 +40,7 @@ public class IbiologyLinksService extends HttpServlet
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		List<AbstractModel> findAll = dao.findAll();
+		List<Object> findAll = dao.findAll();
 		Gson gson = new Gson();
 		response.getWriter().write(gson.toJson(findAll));
 	}

@@ -1,4 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +8,8 @@
     <meta name="author" content="">
 
     <title>360°生物物语管理系统 - 登录</title>
+    
+    <link rel="shortcut icon" href="resource/img/site/favicon.ico" type="image/x-icon" />
 
     <!-- Bootstrap Core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -109,7 +110,7 @@
      <div class="container">
 	    <div class="row">
 	        <div class="col-sm-6 col-md-4 col-md-offset-4">
-	            <h1 class="text-center login-title"><a href="index.jsp">360°生物物语</a></h1>
+	            <h1 class="text-center login-title"><a href="www.ibiology.org.cn">360°生物物语</a></h1>
 	            <div class="account-wall">
 	                <img class="profile-img" src="resource/img/user/default.jpg" alt="">
 	                <form class="form-signin">
@@ -156,7 +157,7 @@
 		{
 			$.ajax({
 				   type: "POST",
-				   url: "/ibiology/login",//JD云存储地址应为："/login"
+				   url: "/ibiology/login",
 				   data: "name="+$("#name").val()+"&pwd="+$("#pwd").val(),
 				   success: function(msg){
 				     if(msg=="SUCCESS")

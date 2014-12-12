@@ -6,11 +6,8 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-import cn.org.ibiology.hbm.model.AbstractModel;
-
 /**
  * 友情链接数据库访问
- * 
  * @author liushaofeng
  * @date 2014-12-9
  */
@@ -18,35 +15,33 @@ public class LinksDAO extends AbstractDAO
 {
 
 	@Override
-	public boolean save(AbstractModel model)
+	public boolean save(Object model)
 	{
 		return super.save(model);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<AbstractModel> findAll()
+	public List<Object> findAll()
 	{
 		Session session = getSession();
-		String hql = "from LinksModel as model order by model.effectiveTime >=" + Calendar.getInstance().getTime().getTime();
+		String hql = "from LinksModel as model where model.effectiveTime >=?";
 		Query createQuery = session.createQuery(hql);
-		List<AbstractModel> list = (List<AbstractModel>) createQuery.list();
+		createQuery.setParameter(0, Calendar.getInstance().getTime());
+		List<Object> list = createQuery.list();
 		session.close();
 		return list;
-
 	}
 
 	@Override
-	AbstractModel findByID(int id)
+	public Object findByID(int id)
 	{
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	AbstractModel update(AbstractModel model)
+	public Object update(Object model)
 	{
-		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -28,7 +28,7 @@
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
 	    $(document).ready(function() {
-	    	loadTabel();
+	    	loadTable();
 	    	$('.form_date').datetimepicker({
 	            //language:  'fr',
 	            weekStart: 1,
@@ -40,22 +40,27 @@
 	    		forceParse: 0
 	        });
 	    });
-	    function loadTabel()
+	    function loadTable()
 	    {
 	    	$.ajax({
 	 		   type: "GET",
 	 		   url: "/ibiology/LinksService",
 	 		   dataType:"json",
 	 		   success: function(msg){
+		 		   	var dataList=eval(msg);
 	 		     	$("#linksData").html("");
-	 		     	$("#linksData").append("");
+	 		     	for(var i in dataList)
+	 		     	{
+	 		     		$("#linksData").append("<tr><td>"+dataList[i].id+"</td><td>"+dataList[i].siteName+"</td><td>"+dataList[i].siteDomain+"</td><td>"+dataList[i].createDate+"</td><td>"+dataList[i].effectiveTime+"</td></tr>");
+		 		    }
+
+	 		     	$('#dataTables-example').dataTable({        				
+	 					"oLanguage": {
+	 						"sUrl": "../js/datatable_zh_CN.json"
+	 					}
+	 				});
 	 		   }
 	 		});
-	    	$('#dataTables-example').dataTable({        				
-				"oLanguage": {
-				"sUrl": "../js/datatable_zh_CN.json"
-			} 
-			});
 	    }
 	    
 	    function saveData()
@@ -83,7 +88,7 @@
 	    		   success: function(msg){
 	    		     	if(msg=="SUCCESS")
 	    		     	{
-							loadTabel();
+	    		     		loadTable();
 	            		}
 	            		else
 	            		{
@@ -192,7 +197,7 @@
 					   <div class="form-group">
 					      <label for="lastname" class="col-sm-2 control-label">有效时间</label>
 					      <div class="col-sm-10">
-					         <div class="input-group date form_date col-md-12" data-date="2014-12-08T23:30:07Z" data-date-format="yyyy-MM-dd HH:mm:ss">
+					         <div class="input-group date form_date col-md-12" data-date-format="yyyy-MM-dd HH:mm:ss">
 				             	<input class="form-control" size="16" id="time" type="text" value="" readonly>
 				             	<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>

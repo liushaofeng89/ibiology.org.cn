@@ -49,7 +49,7 @@ public class RightCheckFilter implements Filter
 			if (session.isNew() || attribute == null)
 			{
 				HttpServletResponse resp = (HttpServletResponse) response;
-				resp.sendRedirect("../login.jsp");
+				resp.sendRedirect("../login.html");
 			}
 		}
 		chain.doFilter(request, response);

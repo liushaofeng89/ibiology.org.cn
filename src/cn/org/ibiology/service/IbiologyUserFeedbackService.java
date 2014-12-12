@@ -16,7 +16,7 @@ import cn.org.ibiology.hbm.model.UserFeedbackModel;
  * @author liushaofeng
  * @date 2014-12-4
  */
-public class UserFeedbackService extends HttpServlet
+public class IbiologyUserFeedbackService extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	private UserFeedbackDAO dao=null;
@@ -24,7 +24,7 @@ public class UserFeedbackService extends HttpServlet
 	/**
 	 * constructor
 	 */
-	public UserFeedbackService()
+	public IbiologyUserFeedbackService()
 	{
 		super();
 		this.dao = new UserFeedbackDAO();

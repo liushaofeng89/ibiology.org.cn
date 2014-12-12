@@ -67,28 +67,28 @@
 		</description>
 		<display-name>WelcomeService</display-name>
 		<servlet-name>WelcomeService</servlet-name>
-		<servlet-class>cn.org.ibiology.service.WelcomeService</servlet-class>
+		<servlet-class>cn.org.ibiology.service.IbiologyWelcomeService</servlet-class>
 	</servlet>
 	<servlet>
 		<description>
 		</description>
 		<display-name>ContactService</display-name>
 		<servlet-name>ContactService</servlet-name>
-		<servlet-class>cn.org.ibiology.service.ContactService</servlet-class>
+		<servlet-class>cn.org.ibiology.service.IbiologyContactService</servlet-class>
 	</servlet>
 	<servlet>
 		<description>
 		</description>
 		<display-name>IndexService</display-name>
 		<servlet-name>IndexService</servlet-name>
-		<servlet-class>cn.org.ibiology.service.IndexService</servlet-class>
+		<servlet-class>cn.org.ibiology.service.IbiologyIndexService</servlet-class>
 	</servlet>
 	<servlet>
 		<description>
 		</description>
 		<display-name>FAQService</display-name>
 		<servlet-name>FAQService</servlet-name>
-		<servlet-class>cn.org.ibiology.service.FAQService</servlet-class>
+		<servlet-class>cn.org.ibiology.service.IbiologyFAQService</servlet-class>
 	</servlet>
 	<servlet>
 		<description>
@@ -116,7 +116,7 @@
 		</description>
 		<display-name>UserFeedbackService</display-name>
 		<servlet-name>UserFeedbackService</servlet-name>
-		<servlet-class>cn.org.ibiology.service.UserFeedbackService</servlet-class>
+		<servlet-class>cn.org.ibiology.service.IbiologyUserFeedbackService</servlet-class>
 	</servlet>
 	<servlet>
 		<description>

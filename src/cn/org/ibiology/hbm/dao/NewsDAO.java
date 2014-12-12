@@ -2,8 +2,6 @@ package cn.org.ibiology.hbm.dao;
 
 import java.util.List;
 
-import cn.org.ibiology.hbm.model.AbstractModel;
-
 /**
  * 新闻数据处理数据库访问
  * 
@@ -14,25 +12,25 @@ public class NewsDAO extends AbstractDAO
 {
 
 	@Override
-	public boolean save(AbstractModel model)
+	public boolean save(Object model)
 	{
 		return super.save(model);
 	}
 
 	@Override
-	public List<AbstractModel> findAll()
+	public List<Object> findAll()
 	{
 		return null;
 	}
 
 	@Override
-	public AbstractModel findByID(int id)
+	public Object findByID(int id)
 	{
 		return null;
 	}
 
 	@Override
-	public AbstractModel update(AbstractModel model)
+	public Object update(Object model)
 	{
 		return null;
 	}

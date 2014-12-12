@@ -12,6 +12,8 @@
 
 
     <title>360°生命物语 | 360°生命物语系统上线</title>
+    
+    <link rel="shortcut icon" href="resource/img/site/favicon.ico" type="image/x-icon" />
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

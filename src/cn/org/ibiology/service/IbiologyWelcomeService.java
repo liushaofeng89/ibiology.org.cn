@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author liushaofeng
  * @date 2014-11-1
  */
-public class WelcomeService extends HttpServlet
+public class IbiologyWelcomeService extends HttpServlet
 {
 
 	/**

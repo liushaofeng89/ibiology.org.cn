@@ -9,7 +9,7 @@ import java.util.Date;
  * @author liushaofeng
  * @date 2014-11-15
  */
-public class NewsModel extends AbstractModel
+public class NewsModel
 {
 	private int id;
 	private String newsTitle;

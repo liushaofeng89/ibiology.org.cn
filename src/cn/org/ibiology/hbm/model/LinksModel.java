@@ -8,7 +8,7 @@ import java.util.Date;
  * @author liushaofeng
  * @date 2014-12-8
  */
-public class LinksModel extends AbstractModel
+public class LinksModel
 {
 	private int id;
 	private String siteName;
@@ -16,6 +16,14 @@ public class LinksModel extends AbstractModel
 	private Date createDate;
 	private Date effectiveTime;
 
+	/**
+	 * default constructor for hibernate
+	 */
+	public LinksModel()
+	{
+		
+	}
+	
 	/**
 	 * constructor
 	 * 

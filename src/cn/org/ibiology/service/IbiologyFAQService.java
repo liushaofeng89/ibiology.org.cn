@@ -7,16 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class IndexService
+ * Servlet implementation class FAQService
  */
-public class IndexService extends HttpServlet
+public class IbiologyFAQService extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public IndexService()
+	public IbiologyFAQService()
 	{
 		super();
 		// TODO Auto-generated constructor stub
@@ -28,7 +28,7 @@ public class IndexService extends HttpServlet
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("faq.jsp").forward(request, response);
 	}
 
 	/**

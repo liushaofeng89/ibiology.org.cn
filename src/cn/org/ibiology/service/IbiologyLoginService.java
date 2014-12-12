@@ -33,7 +33,7 @@ public class IbiologyLoginService extends HttpServlet
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("login.html");
 	}
 
 	/**

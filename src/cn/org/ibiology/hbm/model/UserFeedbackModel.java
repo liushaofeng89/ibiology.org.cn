@@ -6,7 +6,7 @@ package cn.org.ibiology.hbm.model;
  * @author liushaofeng
  * @date 2014-12-4
  */
-public class UserFeedbackModel extends AbstractModel
+public class UserFeedbackModel
 {
 	private int id;
 	private String qq;
