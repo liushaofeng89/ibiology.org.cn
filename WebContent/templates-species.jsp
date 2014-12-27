@@ -9,7 +9,7 @@
     <meta name="description" content="360°生命物语是一本包含各种生物特征介绍、养殖、物种分布、价值与危害以及病虫防疫的百科全书。我们致力于成为全中国最大的动植物百科网站。" />
 
 
-    <title>360°生命物语 | 植物介绍之梅花</title>
+    <title>植物介绍之梅花 - 360°生命物语</title>
     
     <link rel="shortcut icon" href="resource/img/site/favicon.ico" type="image/x-icon" />
 
@@ -59,8 +59,8 @@
 				   <li class="active">
 				      <a href="#home" data-toggle="tab"><i class="fa fa-tree"></i> 物种介绍</a>
 				   </li>
-				   <li><a href="#ios" data-toggle="tab">品种分类</a></li>
-				   <li><a href="#ios" data-toggle="tab">生长特性</a></li>
+				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-th-list"></i> 品种分类</a></li>
+				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-lemon-o"></i> 生长特性</a></li>
 				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-globe"></i> 分布区域</a></li>
 				   <li><a href="#ios" data-toggle="tab">价值与危害</a></li>
 				   <li><a href="#ios" data-toggle="tab">养殖方法</a></li>

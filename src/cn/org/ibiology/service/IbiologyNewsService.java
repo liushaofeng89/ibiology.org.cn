@@ -13,7 +13,10 @@ import cn.org.ibiology.hbm.dao.NewsDAO;
 import cn.org.ibiology.hbm.model.NewsModel;
 
 /**
- * 新闻数据处理中心
+ * 新闻信息处理类
+ * 
+ * @author liushaofeng
+ * @date 2014-12-20
  */
 public class IbiologyNewsService extends HttpServlet
 {
@@ -25,19 +28,20 @@ public class IbiologyNewsService extends HttpServlet
 	public IbiologyNewsService()
 	{
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * 获取新闻数据
+	 * 获取新闻信息
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		// TODO Auto-generated method stub
+		String requestURI = request.getRequestURI();
+		String idFileName = requestURI.substring(requestURI.indexOf("news/") + IConstantKey.INT_5);
+		System.out.println(idFileName);
 	}
 
 	/**
-	 * 保存新闻数据
+	 * 保存新闻信息
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
 			IOException
@@ -65,5 +69,7 @@ public class IbiologyNewsService extends HttpServlet
 		String currentUser = (String) request.getSession().getAttribute(IConstantKey.USER_RIGHT_NAME);
 		boolean save = new NewsDAO().save(new NewsModel(title, newsContent, newsFrom, writer, currentUser));
 		out.write(save ? "SUCCESS" : "数据保存失败！");
+
 	}
+
 }

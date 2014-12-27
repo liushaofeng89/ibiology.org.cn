@@ -32,7 +32,7 @@ var _hmt = _hmt || [];
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			
 			<ul class="nav navbar-nav navbar-right">
-				<li>
+				<!-- <li>
 					<form class="navbar-form" role="search">
 				        <div class="input-group">
 				            <input type="text" class="form-control" placeholder="搜索" name="q">
@@ -41,12 +41,12 @@ var _hmt = _hmt || [];
 				            </div>
 				        </div>
 		        	</form>
-				</li>
+				</li> -->
 				<li>
 					<a href="<%=request.getContextPath()%>/index"><i class="fa fa-home"></i> 首页</a>
 				</li>
 				<li class="dropdown dropdown-large">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-heart"></i> 盆栽/宠物 <b class="caret"></b></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-heart-o"></i> 盆栽/宠物 <b class="caret"></b></a>
 					
 					<ul class="dropdown-menu dropdown-menu-large row">
 						<li class="col-sm-4">
@@ -89,7 +89,7 @@ var _hmt = _hmt || [];
 					
 				</li>
 				<li>
-					<a href="<%=request.getContextPath()%>/contact"><i class="fa fa-phone"></i> 联系我们</a>
+					<a href="<%=request.getContextPath()%>/contact"><i class="fa fa-envelope-o"></i> 联系我们</a>
 				</li>
 			</ul>
 		</div>

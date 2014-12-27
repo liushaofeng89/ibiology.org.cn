@@ -52,7 +52,7 @@
 		<filter-name>RightCheck</filter-name>
 		<url-pattern>/manage/*</url-pattern>
 	</filter-mapping>
-	
+
 
 
 	<servlet>
@@ -107,13 +107,6 @@
 	<servlet>
 		<description>
 		</description>
-		<display-name>IbiologyNewsService</display-name>
-		<servlet-name>IbiologyNewsService</servlet-name>
-		<servlet-class>cn.org.ibiology.service.IbiologyNewsService</servlet-class>
-	</servlet>
-	<servlet>
-		<description>
-		</description>
 		<display-name>UserFeedbackService</display-name>
 		<servlet-name>UserFeedbackService</servlet-name>
 		<servlet-class>cn.org.ibiology.service.IbiologyUserFeedbackService</servlet-class>
@@ -124,6 +117,27 @@
 		<display-name>IbiologyLinksService</display-name>
 		<servlet-name>IbiologyLinksService</servlet-name>
 		<servlet-class>cn.org.ibiology.service.IbiologyLinksService</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>IbiologyArticleService</display-name>
+		<servlet-name>IbiologyArticleService</servlet-name>
+		<servlet-class>cn.org.ibiology.service.IbiologyArticleService</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>IbiologySpeciesService</display-name>
+		<servlet-name>IbiologySpeciesService</servlet-name>
+		<servlet-class>cn.org.ibiology.service.IbiologySpeciesService</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>IbiologyNewsService</display-name>
+		<servlet-name>IbiologyNewsService</servlet-name>
+		<servlet-class>cn.org.ibiology.service.IbiologyNewsService</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>WelcomeService</servlet-name>
@@ -154,10 +168,6 @@
 		<url-pattern>/ImageService</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>IbiologyNewsService</servlet-name>
-		<url-pattern>/newsService</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
 		<servlet-name>UserFeedbackService</servlet-name>
 		<url-pattern>/UserFeedback</url-pattern>
 	</servlet-mapping>
@@ -165,6 +175,23 @@
 		<servlet-name>IbiologyLinksService</servlet-name>
 		<url-pattern>/LinksService</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>IbiologyArticleService</servlet-name>
+		<url-pattern>/article/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>IbiologySpeciesService</servlet-name>
+		<url-pattern>/species/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>IbiologyNewsService</servlet-name>
+		<url-pattern>/newsService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>IbiologyNewsService</servlet-name>
+		<url-pattern>/news/*</url-pattern>
+	</servlet-mapping>
+
 
 
 	<error-page>

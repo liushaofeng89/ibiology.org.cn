@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
  * 1.访问量统计
  * 2.客户端地址统计
  * 3.是否通过首页来访问
- * 
  * @author liushaofeng
  * @date 2014-11-1
  */
@@ -29,7 +28,7 @@ public class IbiologyWelcomeService extends HttpServlet
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
-		req.getRequestDispatcher("index.jsp").forward(req, resp);
+		req.getRequestDispatcher("/index").forward(req, resp);
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException

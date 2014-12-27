@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>360°生命物语 | 资源未找到</title>
+    <title>资源未找到 - 360°生命物语</title>
     
     <link rel="shortcut icon" href="resource/img/site/favicon.ico" type="image/x-icon" />
 

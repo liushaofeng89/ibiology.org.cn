@@ -11,7 +11,7 @@
     <meta name="description" content="360°生命物语是一本包含各种生物特征介绍、养殖、物种分布、价值与危害以及病虫防疫的百科全书。我们致力于成为全中国最大的动植物百科网站。" />
 
 
-    <title>360°生命物语 | 联系我们</title>
+    <title>联系我们 - 360°生命物语</title>
     
     <link rel="shortcut icon" href="resource/img/site/favicon.ico" type="image/x-icon" />
 

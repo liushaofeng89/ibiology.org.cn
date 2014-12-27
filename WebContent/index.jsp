@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*,cn.org.ibiology.util.DateUtil,cn.org.ibiology.util.IbiologyIDUtil"%>
+<%@ page import="cn.org.ibiology.service.IbiologyIndexService,cn.org.ibiology.hbm.model.IbiologyIndexModel,cn.org.ibiology.hbm.model.IbiologySpeciesModel"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +11,6 @@
     <meta name="description" content="360°生命物语是一本包含各种生物特征介绍、养殖、物种分布、价值与危害以及病虫防疫的百科全书。我们致力于成为全中国最大的动植物百科网站。" />
 
     <title>360°生命物语</title>
-
 	<link rel="shortcut icon" href="resource/img/site/favicon.ico" type="image/x-icon" />
 	
     <!-- Bootstrap Core CSS -->
@@ -31,6 +32,9 @@
 		.panel-heading small{
 			font-size:16px;
 			float: right;
+		}
+		.panel-body{
+			min-height: 160px;
 		}
 		.new-time{
 			color:#CDCDCD;
@@ -107,25 +111,25 @@
                                 <div id="slide-content-0">
                                     <h2>梅花</h2>
                                     <p>梅花，又名梅，别名：春梅、干枝梅、酸梅、乌梅, 蔷薇科、杏属小乔木，稀灌木，树皮浅灰色或带绿色，平滑；小枝绿色，光滑无毛。叶片卵形或椭圆形，梅原产我国南方，已有三千多年的栽培历史，无论作观赏或果树均有许多品种。许多类型不但露地栽培供观赏，还可以栽为盆花，制作梅，与兰、竹、菊并称为“四君子”。还与松、竹并称为“岁寒三友”。梅以它的高洁、坚强、谦虚的品格，给人以立志奋发的激励。在严寒中，梅开百花之先，独天下而春。</p>
-                                    <p class="sub-text" style="float:right;"><a href="show-content.jsp">查看更多</a></p>
+                                    <p class="sub-text" style="float:right;"><a href="templates-species.jsp">查看更多</a></p>
                                 </div>
 
                                 <div id="slide-content-1">
                                     <h2>蒲公英</h2>
                                     <p>蒲公英（拉丁学名：Taraxacum mongolicum Hand.-Mazz.）菊科，蒲公英属多年生草本植物。根圆锥状，表面棕褐色，皱缩，叶边缘有时具波状齿或羽状深裂，基部渐狭成叶柄，叶柄及主脉常带红紫色，花葶上部紫红色，密被蛛丝状白色长柔毛；头状花序，总苞钟状，瘦果暗褐色，长冠毛白色，花果期4～10月。蒲公英别名黄花地丁、婆婆丁、华花郎等。菊科多年生草本植物。头状花序，种子上有白色冠毛结成的绒球，花开后随风飘到新的地方孕育新生命。</p>
-                                    <p class="sub-text" style="float:right;"><a href="show-content.jsp">查看更多</a></p>
+                                    <p class="sub-text" style="float:right;"><a href="templates-species.jsp">查看更多</a></p>
                                 </div>
 
                                 <div id="slide-content-2">
                                     <h2>三角梅</h2>
                                     <p>Lorem Ipsum Dolor</p>
-                                    <p class="sub-text" style="float:right;"><a href="show-content.jsp">查看更多</a></p>
+                                    <p class="sub-text" style="float:right;"><a href="templates-species.jsp">查看更多</a></p>
                                 </div>
 
                                 <div id="slide-content-3">
                                     <h2>玫瑰花</h2>
                                     <p>Lorem Ipsum Dolor</p>
-                                    <p class="sub-text" style="float:right;"><a href="show-content.jsp">查看更多</a></p>
+                                    <p class="sub-text" style="float:right;"><a href="templates-species.jsp">查看更多</a></p>
                                 </div>
                             </div>
                         </div>
@@ -158,16 +162,26 @@
             <div class="col-md-4">
             	<div class="panel panel-info">
 	            	<div class="panel-heading">
-	              		<h2 class="panel-title"><i class="fa fa-database"></i> 数据更新<small><a href="">more&nbsp;&raquo;</a></small></h2>
+	              		<h2 class="panel-title"><i class="fa fa-database"></i> 数据更新<small><a href="/ibiology/species/">more&nbsp;&raquo;</a></small></h2>
 	            	</div>
 		            <div class="panel-body">
 		            	<ul class="list-unstyled">
-                        	<li><a href="#">liushaofeng更新"文竹"数据</a><span class="new-time">[10-16 22:24]</span></li>
-                        	<li><a href="#">admin更新"玫瑰花"数据</a><span class="new-time">[10-16 22:22]</span></li>
-                        	<li><a href="#">admin更新"三角梅"数据</a><span class="new-time">[10-16 23:22]</span></li>
-                        	<li><a href="#">zhansan更新"蒲公英"数据</a><span class="new-time">[10-16 20:22]</span></li>
-                        	<li><a href="#">admin更新"梅花"数据</a><span class="new-time">[10-16 12:22]</span></li>
-                        	<li><a href="#">admin更新"梅花"数据</a><span class="new-time">[10-16 12:22]</span></li>
+		            		<%
+		            		IbiologyIndexModel indexModel=(IbiologyIndexModel)getServletContext().getAttribute(IbiologyIndexService.INDEX_DATA_KEY);
+		            		List<IbiologySpeciesModel> speciesList = indexModel.getSpeciesList();
+		            		if(!speciesList.isEmpty())
+		            		{
+		            			int tmp=speciesList.size()>5?5:speciesList.size();
+			            		for(int i=0;i<tmp;i++)
+			            		{
+			            			out.println("<li><a href='/ibiology/species/"+IbiologyIDUtil.encodingID(speciesList.get(i).getId())+"'>"+speciesList.get(i).getSpeciesName()+"</a><span class='new-time'>["+DateUtil.dateToStr(speciesList.get(i).getSpeciesUpdateTime(),"MM-dd HH:mm")+"]</span></li>");
+			            		}
+		            		}
+		            		else
+		            		{
+		            			out.print("<li>没有查询到相关数据！</li>");
+		            		}
+		            		%>
                         </ul>
 		            </div>
             	</div>
@@ -176,7 +190,7 @@
             <div class="col-md-4">
             	<div class="panel panel-info">
 	            	<div class="panel-heading">
-	              		<h2 class="panel-title"><i class="fa fa-plus"></i> 欠缺资料<small><a href="">more&nbsp;&raquo;</a></small></h2>
+	              		<h2 class="panel-title"><i class="fa fa-newspaper-o"></i> 相关文章<small><a href="">more&nbsp;&raquo;</a></small></h2>
 	            	</div>
 		            <div class="panel-body">
 		            	<ul class="list-unstyled">

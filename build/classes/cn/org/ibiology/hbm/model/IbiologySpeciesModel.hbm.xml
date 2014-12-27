@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+
+	<class name="cn.org.ibiology.hbm.model.IbiologySpeciesModel" table="_ibiology_species_list">
+		<id name="id" column="SpeciesID" type="java.lang.Integer">
+			<generator class="increment"></generator>
+		</id>
+
+		<property name="speciesName" column="SpeciesName" type="java.lang.String" not-null="true"/>
+		<property name="speciesAliases" column="SpeciesAliases" type="java.lang.String" not-null="true"/>
+		<property name="speciesLatinName" column="SpeciesLatinName" type="java.lang.String" not-null="true"/>
+		<property name="speciesKingdom" column="SpeciesKingdom" type="java.lang.String" not-null="true"/>
+		<property name="speciesPhylum" column="SpeciesPhylum" type="java.lang.String" not-null="true"/>
+		<property name="speciesClass" column="SpeciesClass" type="java.lang.String" not-null="true"/>
+		<property name="speciesOrder" column="SpeciesOrder" type="java.lang.String" not-null="true"/>
+		<property name="speciesFamily" column="SpeciesFamily" type="java.lang.String" not-null="true"/>
+		<property name="speciesGenus" column="SpeciesGenus" type="java.lang.String" not-null="true"/>
+		<property name="speciesSpecies" column="SpeciesSpecies" type="java.lang.String" not-null="true"/>
+		<property name="speciesUpdateTime" column="SpeciesUpdateTime" type="java.util.Date" not-null="true"/>
+		<property name="speciesVisited" column="SpeciesVisited" type="java.lang.Integer" not-null="true"/>
+		<property name="speciesImage" column="SpeciesImage" type="java.lang.String" not-null="true"/>
+		
+	</class>
+</hibernate-mapping>

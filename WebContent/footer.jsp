@@ -14,7 +14,6 @@
 			for (String key : linksMap.keySet())
 			{
 				out.print("<a href='"+linksMap.get(key)+"' target='_blank'>"+key+"</a>&nbsp;&nbsp;");
-				
 			}
 			out.print("</small></blockquote></div></div><hr/>");
 		}

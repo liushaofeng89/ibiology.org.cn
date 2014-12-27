@@ -1,9 +1,11 @@
 package cn.org.ibiology.hbm.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cn.org.ibiology.hbm.dao.IbiologySpeciesDAO;
 import cn.org.ibiology.hbm.dao.LinksDAO;
 
 /**
@@ -13,8 +15,11 @@ import cn.org.ibiology.hbm.dao.LinksDAO;
  */
 public final class IbiologyIndexModel
 {
+	// 物种数据模型
+	private static List<IbiologySpeciesModel> speciesList = new ArrayList<IbiologySpeciesModel>();
+	
 	// 友情链接数据模型
-	private Map<String, String> linksMap = null;
+	private static Map<String, String> linksMap = new HashMap<String, String>();
 
 	private static IbiologyIndexModel instance = new IbiologyIndexModel();
 
@@ -23,19 +28,18 @@ public final class IbiologyIndexModel
 	 */
 	private IbiologyIndexModel()
 	{
-		this.linksMap = new HashMap<String, String>();
-
 		initData();
 	}
 
 	private void initData()
 	{
-		loadLinksData();
-	}
-
-	private void loadLinksData()
-	{
-		List<Object> findAll = new LinksDAO().findAll();
+		List<Object> findAll = new IbiologySpeciesDAO().findAll();
+		for (Object object : findAll)
+		{
+			speciesList.add((IbiologySpeciesModel) object);
+		}
+		
+		findAll = new LinksDAO().findAll();
 		for (Object obj : findAll)
 		{
 			LinksModel model = (LinksModel) obj;
@@ -43,9 +47,15 @@ public final class IbiologyIndexModel
 		}
 	}
 
+
 	public static IbiologyIndexModel getInstance()
 	{
 		return instance;
+	}
+
+	public List<IbiologySpeciesModel> getSpeciesList()
+	{
+		return speciesList;
 	}
 
 	public Map<String, String> getLinksMap()
