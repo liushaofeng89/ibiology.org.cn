@@ -18,9 +18,19 @@ public final class IbiologyIDUtil
 	 * @param ID the species ID in DB
 	 * @return string view ID
 	 */
-	public static final String encodingID(int id)
+	public static final String encodingStrID(int id)
 	{
 		return String.valueOf(id + CONVERT_VALUE);
+	}
+	
+	/**
+	 * encoding ID to a Integer
+	 * @param ID the species ID in DB
+	 * @return string view ID
+	 */
+	public static final int encodingIntID(int id)
+	{
+		return id + CONVERT_VALUE;
 	}
 
 	/**

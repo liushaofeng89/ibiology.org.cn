@@ -167,20 +167,20 @@
 		            <div class="panel-body">
 		            	<ul class="list-unstyled">
 		            		<%
-		            		IbiologyIndexModel indexModel=(IbiologyIndexModel)getServletContext().getAttribute(IbiologyIndexService.INDEX_DATA_KEY);
-		            		List<IbiologySpeciesModel> speciesList = indexModel.getSpeciesList();
-		            		if(!speciesList.isEmpty())
-		            		{
-		            			int tmp=speciesList.size()>5?5:speciesList.size();
-			            		for(int i=0;i<tmp;i++)
-			            		{
-			            			out.println("<li><a href='/ibiology/species/"+IbiologyIDUtil.encodingID(speciesList.get(i).getId())+"'>"+speciesList.get(i).getSpeciesName()+"</a><span class='new-time'>["+DateUtil.dateToStr(speciesList.get(i).getSpeciesUpdateTime(),"MM-dd HH:mm")+"]</span></li>");
-			            		}
-		            		}
-		            		else
-		            		{
-		            			out.print("<li>没有查询到相关数据！</li>");
-		            		}
+		            			IbiologyIndexModel indexModel=(IbiologyIndexModel)getServletContext().getAttribute(IbiologyIndexService.INDEX_DATA_KEY);
+		            				            		List<IbiologySpeciesModel> speciesList = indexModel.getSpeciesList();
+		            				            		if(!speciesList.isEmpty())
+		            				            		{
+		            				            			int tmp=speciesList.size()>5?5:speciesList.size();
+		            			            		for(int i=0;i<tmp;i++)
+		            			            		{
+		            			            			out.println("<li><a href='/ibiology/species/"+IbiologyIDUtil.encodingStrID(speciesList.get(i).getId())+"'>"+speciesList.get(i).getSpeciesName()+"</a><span class='new-time'>["+DateUtil.dateToStr(speciesList.get(i).getSpeciesUpdateTime(),"MM-dd HH:mm")+"]</span></li>");
+		            			            		}
+		            				            		}
+		            				            		else
+		            				            		{
+		            				            			out.print("<li>没有查询到相关数据！</li>");
+		            				            		}
 		            		%>
                         </ul>
 		            </div>

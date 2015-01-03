@@ -35,7 +35,7 @@ public class IbiologyLogoutService extends HttpServlet
 	{
 		req.getSession().setAttribute(IConstantKey.USER_RIGHT_NAME, null);
 		req.getSession().invalidate();
-		resp.sendRedirect(req.getContextPath() + "/index");
+		resp.sendRedirect(req.getContextPath());
 	}
 
 }

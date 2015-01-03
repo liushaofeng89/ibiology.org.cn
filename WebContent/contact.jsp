@@ -70,7 +70,10 @@
                     <div class="panel-body">
                         <h4>系统开发</h4>
                         <p style="margin-left:35px;float: left;"><i class="fa fa-envelope-o"></i>: <a href="mailto:liushaofeng89@qq.com">liushaofeng89@qq.com</a></p>
-                        <p style="margin-left:35px;float: left;"><i class="fa fa-location-arrow"></i>: <a href="javascript:void(0)">四川</a>·<a href="javascript:void(0)">成都</a></a></p>
+                        <p style="margin-left:35px;float: left;"><i class="fa fa-weixin"></i>: <a href="javascript:void(0)">lwx166646</a></p>
+                        <p style="margin-left:35px;float: left;"><i class="fa fa-weibo"></i>: <a href="javascript:void(0)">1229026644@qq.com</a></p>
+                        <p style="margin-left:35px;float: left;"><i class="fa fa-github"></i>: <a href="javascript:void(0)">liushaofeng89</a></p>
+                        <p style="margin-left:35px;float: left;"><i class="fa fa-paper-plane-o"></i>: <a href="javascript:void(0)">四川</a>·<a href="javascript:void(0)">成都</a></p>
                     </div>
                 </div>
             </div>
@@ -82,7 +85,7 @@
                     <div class="panel-body">
                         <h4>SEO优化</h4>
                         <p style="margin-left:35px;float: left;"><i class="fa fa-envelope-o"></i>: <a href="mailto:name@example.com">name@example.com</a></p>
-                        <p style="margin-left:35px;float: left;"><i class="fa fa-location-arrow"></i>: <a href="javascript:void(0)">四川</a>·<a href="javascript:void(0)">成都</a></a></p>
+                        <p style="margin-left:35px;float: left;"><i class="fa fa-paper-plane-o"></i>: <a href="javascript:void(0)">四川</a>·<a href="javascript:void(0)">成都</a></a></p>
                     </div>
                 </div>
             </div>
@@ -94,7 +97,7 @@
                     <div class="panel-body">
                         <h4>美工支持</h4>
                         <p style="margin-left:35px;float: left;"><i class="fa fa-envelope-o"></i>: <a href="mailto:name@example.com">name@example.com</a></p>
-                        <p style="margin-left:35px;float: left;"><i class="fa fa-location-arrow"></i>: <a href="javascript:void(0)">四川</a>·<a href="javascript:void(0)">成都</a></a></p>
+                        <p style="margin-left:35px;float: left;"><i class="fa fa-paper-plane-o"></i>: <a href="javascript:void(0)">四川</a>·<a href="javascript:void(0)">成都</a></a></p>
                     </div>
                 </div>
             </div>
@@ -106,7 +109,7 @@
                     <div class="panel-body">
                         <h4>数据录入</h4>
                         <p style="margin-left:35px;float: left;"><i class="fa fa-envelope-o"></i>: <a href="mailto:name@example.com">name@example.com</a></p>
-                        <p style="margin-left:35px;float: left;"><i class="fa fa-location-arrow"></i>: <a href="javascript:void(0)">四川</a>·<a href="javascript:void(0)">成都</a></a></p>
+                        <p style="margin-left:35px;float: left;"><i class="fa fa-paper-plane-o"></i>: <a href="javascript:void(0)">四川</a>·<a href="javascript:void(0)">成都</a></a></p>
                     </div>
                 </div>
             </div>

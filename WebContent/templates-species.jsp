@@ -62,18 +62,18 @@
 				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-th-list"></i> 品种分类</a></li>
 				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-lemon-o"></i> 生长特性</a></li>
 				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-globe"></i> 分布区域</a></li>
-				   <li><a href="#ios" data-toggle="tab">价值与危害</a></li>
-				   <li><a href="#ios" data-toggle="tab">养殖方法</a></li>
+				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-warning"></i> 价值与危害</a></li>
+				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-bug"></i> 养殖方法</a></li>
 				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-medkit"></i> 病虫防疫</a></li>
 				   <li class="dropdown">
 				      <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ambulance"></i> 寻求帮助<b class="caret"></b></a>
 				      <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
 				         <li><a href="#jmeter" tabindex="-1" data-toggle="tab"><i class="fa fa-user-md"></i>  医生咨询</a></li>
-				         <li><a href="#ejb" tabindex="-1" data-toggle="tab"><i class="fa fa-credit-card"></i> 我要购买</a></li>
+				         <li><a href="#ejb" tabindex="-1" data-toggle="tab"><i class="fa fa-shopping-cart"></i> 我要购买</a></li>
 				      </ul>
 				   </li>
 				</ul>
-				<div id="myTabContent" class="tab-content">
+				<div id="myTabContent" class="tab-content" style="min-height: 600px;">
 				   <div class="tab-pane fade in active" id="home">
 				      <p>W3Cschoool菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
 				   </div>
