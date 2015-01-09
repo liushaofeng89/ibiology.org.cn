@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="resource/img/site/favicon.ico" type="image/x-icon" />
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/ibiology.css" rel="stylesheet">
@@ -47,7 +47,7 @@
                     <small>360°生命物语系统上线</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="<%=request.getContextPath()%>/index">首页</a>
+                    <li><a href="<%=request.getContextPath()%>">首页</a>
                     </li>
                     <li class="active">新闻中心</li>
                 </ol>

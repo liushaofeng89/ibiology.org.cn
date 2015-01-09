@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*,cn.org.ibiology.util.DateUtil,cn.org.ibiology.util.IbiologyIDUtil"%>
 <%@ page import="cn.org.ibiology.service.IbiologyIndexService,cn.org.ibiology.hbm.model.IbiologyIndexModel,cn.org.ibiology.hbm.model.IbiologySpeciesModel"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="zh">
 <head>
+	<base href="<%=basePath%>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +19,7 @@
 	<link rel="shortcut icon" href="resource/img/site/favicon.ico" type="image/x-icon" />
 	
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/ibiology.css" rel="stylesheet">
@@ -46,15 +51,17 @@
 			margin-left: -40px;
 			margin-top:20px;
 		}
-		.page-header{
-			border-bottom: none;
-		}
 		#toTop{
 			position: fixed;
 			bottom: 10px;
 			right: 10px;
 			cursor: pointer;
 			display: none;
+		}
+		blockquote{
+			margin-left: 10px;
+			padding-left: 10px;
+			font-size: 16pt;
 		}
 		
 		/* boxgrid */
@@ -142,7 +149,7 @@
         <!-- Content Row -->
         <div class="row">
             <div class="col-md-4">
-            	<div class="panel panel-info">
+            	<div class="panel panel-default">
 	            	<div class="panel-heading">
 	              		<h2 class="panel-title"><i class="fa fa-fw fa-bullhorn"></i> 通知新闻<small><a href="">more&nbsp;&raquo;</a></small></h2>
 	            	</div>
@@ -160,7 +167,7 @@
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-4">
-            	<div class="panel panel-info">
+            	<div class="panel panel-default">
 	            	<div class="panel-heading">
 	              		<h2 class="panel-title"><i class="fa fa-database"></i> 数据更新<small><a href="/ibiology/species/">more&nbsp;&raquo;</a></small></h2>
 	            	</div>
@@ -168,19 +175,19 @@
 		            	<ul class="list-unstyled">
 		            		<%
 		            			IbiologyIndexModel indexModel=(IbiologyIndexModel)getServletContext().getAttribute(IbiologyIndexService.INDEX_DATA_KEY);
-		            				            		List<IbiologySpeciesModel> speciesList = indexModel.getSpeciesList();
-		            				            		if(!speciesList.isEmpty())
-		            				            		{
-		            				            			int tmp=speciesList.size()>5?5:speciesList.size();
-		            			            		for(int i=0;i<tmp;i++)
-		            			            		{
-		            			            			out.println("<li><a href='/ibiology/species/"+IbiologyIDUtil.encodingStrID(speciesList.get(i).getId())+"'>"+speciesList.get(i).getSpeciesName()+"</a><span class='new-time'>["+DateUtil.dateToStr(speciesList.get(i).getSpeciesUpdateTime(),"MM-dd HH:mm")+"]</span></li>");
-		            			            		}
-		            				            		}
-		            				            		else
-		            				            		{
-		            				            			out.print("<li>没有查询到相关数据！</li>");
-		            				            		}
+		            			List<IbiologySpeciesModel> speciesList = indexModel.getSpeciesList();
+		            			if(!speciesList.isEmpty())
+		            			{
+		            				int tmp=speciesList.size()>5?5:speciesList.size();
+		            			    for(int i=0;i<tmp;i++)
+		            			    {
+		            			    	out.println("<li><a href='./species/"+IbiologyIDUtil.encodingStrID(speciesList.get(i).getId())+".html'>"+speciesList.get(i).getSpeciesName()+"</a><span class='new-time'>["+DateUtil.dateToStr(speciesList.get(i).getSpeciesUpdateTime(),"MM-dd HH:mm")+"]</span></li>");
+		            			    }
+		            			}
+		            			else
+		            			{
+		            				out.print("<li>没有查询到相关数据！</li>");
+		            			}
 		            		%>
                         </ul>
 		            </div>
@@ -188,7 +195,7 @@
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-4">
-            	<div class="panel panel-info">
+            	<div class="panel panel-default">
 	            	<div class="panel-heading">
 	              		<h2 class="panel-title"><i class="fa fa-newspaper-o"></i> 相关文章<small><a href="">more&nbsp;&raquo;</a></small></h2>
 	            	</div>
@@ -212,44 +219,47 @@
         
         <!-- Our Customers -->
         <div class="row">
-            <div class="col-lg-12">
-                <h3 class="page-header">植物点击榜</h3>
-            </div>
-            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="resource/img/site/top1.jpg" alt="">
-                <div class="cover boxcaption">
-					<h5>梅花</h5>
-				</div>
-            </div>
-            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="resource/img/site/top2.jpg" alt="">
-                <div class="cover boxcaption">
-					<h5>银杏</h5>
-				</div>
-            </div>
-            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="resource/img/site/top3.jpg" alt="">
-                <div class="cover boxcaption">
-					<h5>未知</h5>
-				</div>
-            </div>
-            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="resource/img/site/top4.jpg" alt="">
-                <div class="cover boxcaption">
-					<h5>竹子</h5>
-				</div>
-            </div>
-            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="resource/img/site/top5.jpg" alt="">
-                <div class="cover boxcaption">
-					<h5>荷花</h5>
-				</div>
-            </div>
-            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="resource/img/site/top6.jpg" alt="">
-                <div class="cover boxcaption">
-					<h5>滴水观音</h5>
-				</div>
+            <div class="col-lg-12" style="padding: 0">
+            	<blockquote>
+            		植物点击榜
+            	</blockquote>
+            	
+            	<div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
+	                <img class="img-responsive customer-img" src="resource/img/site/top1.jpg" alt="">
+	                <div class="cover boxcaption">
+						<h5>梅花</h5>
+					</div>
+	            </div>
+	            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
+	                <img class="img-responsive customer-img" src="resource/img/site/top2.jpg" alt="">
+	                <div class="cover boxcaption">
+						<h5>银杏</h5>
+					</div>
+	            </div>
+	            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
+	                <img class="img-responsive customer-img" src="resource/img/site/top3.jpg" alt="">
+	                <div class="cover boxcaption">
+						<h5>未知</h5>
+					</div>
+	            </div>
+	            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
+	                <img class="img-responsive customer-img" src="resource/img/site/top4.jpg" alt="">
+	                <div class="cover boxcaption">
+						<h5>竹子</h5>
+					</div>
+	            </div>
+	            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
+	                <img class="img-responsive customer-img" src="resource/img/site/top5.jpg" alt="">
+	                <div class="cover boxcaption">
+						<h5>荷花</h5>
+					</div>
+	            </div>
+	            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
+	                <img class="img-responsive customer-img" src="resource/img/site/top6.jpg" alt="">
+	                <div class="cover boxcaption">
+						<h5>滴水观音</h5>
+					</div>
+	            </div>
             </div>
         </div>
         <!-- /.row -->
@@ -258,45 +268,47 @@
         
          <!-- Our Customers -->
         <div class="row">
-            <div class="col-lg-12">
-                <h3 class="page-header">动物点击榜</h3>
-            </div>
-            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="resource/img/site/animal_top1.jpg" alt="">
-                <div class="cover boxcaption">
-					<h5>萨摩耶</h5>
-				</div>
-            </div>
-            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="resource/img/site/animal_top2.jpg" alt="">
-                <div class="cover boxcaption">
-					<h5>哈士奇</h5>
-				</div>
-            </div>
-            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="resource/img/site/animal_top3.jpg" alt="">
-                <div class="cover boxcaption">
-					<h5>博美</h5>
-				</div>
-            </div>
-            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="resource/img/site/animal_top4.jpg" alt="">
-                <div class="cover boxcaption">
-					<h5>猫</h5>
-				</div>
-            </div>
-            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="resource/img/site/animal_top5.jpg" alt="">
-                <div class="cover boxcaption">
-					<h5>麻雀</h5>
-				</div>
-            </div>
-            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
-                <img class="img-responsive customer-img" src="resource/img/site/animal_top6.jpg" alt="">
-                <div class="cover boxcaption">
-					<h5>鹦鹉</h5>
-				</div>
-            </div>
+            <div class="col-lg-12"style="padding: 0">
+            	<blockquote>
+            		植物点击榜
+            	</blockquote>
+	            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
+	                <img class="img-responsive customer-img" src="resource/img/site/animal_top1.jpg" alt="">
+	                <div class="cover boxcaption">
+						<h5>萨摩耶</h5>
+					</div>
+	            </div>
+	            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
+	                <img class="img-responsive customer-img" src="resource/img/site/animal_top2.jpg" alt="">
+	                <div class="cover boxcaption">
+						<h5>哈士奇</h5>
+					</div>
+	            </div>
+	            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
+	                <img class="img-responsive customer-img" src="resource/img/site/animal_top3.jpg" alt="">
+	                <div class="cover boxcaption">
+						<h5>博美</h5>
+					</div>
+	            </div>
+	            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
+	                <img class="img-responsive customer-img" src="resource/img/site/animal_top4.jpg" alt="">
+	                <div class="cover boxcaption">
+						<h5>猫</h5>
+					</div>
+	            </div>
+	            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
+	                <img class="img-responsive customer-img" src="resource/img/site/animal_top5.jpg" alt="">
+	                <div class="cover boxcaption">
+						<h5>麻雀</h5>
+					</div>
+	            </div>
+	            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
+	                <img class="img-responsive customer-img" src="resource/img/site/animal_top6.jpg" alt="">
+	                <div class="cover boxcaption">
+						<h5>鹦鹉</h5>
+					</div>
+	            </div>
+	    	</div>
         </div>
         <!-- /.row -->
 

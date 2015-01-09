@@ -1,6 +1,8 @@
 package cn.org.ibiology.util;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.jboss.logging.Logger;
@@ -25,7 +27,7 @@ public final class HtmlFileChecker
 	 * @param id 文件ID号
 	 * @return 是否存在
 	 */
-	public static boolean check(String containerPath, String fileType, int id)
+	public static File check(String containerPath, String fileType, int id)
 	{
 		File staticFile = new File(containerPath + fileType + File.separator + id + ".html");
 		if (!staticFile.exists())
@@ -37,14 +39,44 @@ public final class HtmlFileChecker
 				{
 					folder.mkdirs();
 				}
-				return staticFile.createNewFile();
+				if(!staticFile.createNewFile())
+				{
+					System.out.println("Create html file error!");
+				}
 			}
 			catch (IOException e)
 			{
 				Logger.getLogger(HtmlFileChecker.class).error(e.getMessage(), e);
-				return false;
+				return null;
 			}
 		}
-		return true;
+		// write data to file
+		try
+		{
+			writeDataToFile(staticFile);
+		}
+		catch (IOException e)
+		{
+			Logger.getLogger(HtmlFileChecker.class).error(e.getMessage(), e);
+		}
+		return staticFile;
+	}
+
+	private static void writeDataToFile(File staticFile) throws IOException
+	{
+		BufferedWriter bufferedWriter = null;
+		try
+		{
+			bufferedWriter = new BufferedWriter(new FileWriter(staticFile));
+			bufferedWriter.write("I'm sorry,this function is under construction!");
+		}
+		catch (IOException e)
+		{
+			Logger.getLogger(HtmlFileChecker.class).error(e.getMessage(), e);
+		}
+		finally
+		{
+			bufferedWriter.close();
+		}
 	}
 }

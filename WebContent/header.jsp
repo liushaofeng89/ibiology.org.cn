@@ -26,7 +26,7 @@ var _hmt = _hmt || [];
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" style="padding:0;" href="<%=request.getContextPath()%>/index"><img src="resource/img/site/logo.png" /></a>
+			<a class="navbar-brand" href="<%=request.getContextPath()%>">360°生命物语</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -43,7 +43,10 @@ var _hmt = _hmt || [];
 		        	</form>
 				</li> -->
 				<li>
-					<a href="<%=request.getContextPath()%>/index"><i class="fa fa-home"></i> 首页</a>
+					<a href="<%=request.getContextPath()%>"><i class="fa fa-home"></i> 首页</a>
+				</li>
+				<li>
+					<a href="florid.jsp"><i class="fa fa-gift"></i> 花语</a>
 				</li>
 				<li class="dropdown dropdown-large">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-heart-o"></i> 盆栽/宠物 <b class="caret"></b></a>

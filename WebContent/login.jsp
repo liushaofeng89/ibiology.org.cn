@@ -1,18 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
+	<base href="<%=basePath%>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <title>登录 - 360°生物物语管理系统</title>
     
     <link rel="shortcut icon" href="resource/img/site/favicon.ico" type="image/x-icon" />
 
     <!-- Bootstrap Core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="./resource/Font-Awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -157,7 +161,7 @@
 		{
 			$.ajax({
 				   type: "POST",
-				   url: "/ibiology/login",
+				   url: "<%=path%>/login",
 				   data: "name="+$("#name").val()+"&pwd="+$("#pwd").val(),
 				   success: function(msg){
 				     if(msg=="SUCCESS")

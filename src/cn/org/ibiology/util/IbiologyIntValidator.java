@@ -23,7 +23,7 @@ public final class IbiologyIntValidator
 		}
 		catch (NumberFormatException e)
 		{
-			Logger.getLogger(this.getClass()).error(e.getMessage(), e);
+			Logger.getLogger(this.getClass()).error(e.getMessage());
 		}
 		return null;
 	}

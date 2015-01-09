@@ -1,7 +1,10 @@
 package cn.org.ibiology.service;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +31,6 @@ public class IbiologySpeciesService extends HttpServlet
 	public IbiologySpeciesService()
 	{
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -49,16 +51,22 @@ public class IbiologySpeciesService extends HttpServlet
 			if (speciesId != UNKNOWN)
 			{
 				// 检查生成数据文件
-				if (HtmlFileChecker.check(getServletConfig().getServletContext().getRealPath("/"),
-						HtmlFileChecker.FILE_TYPE_SPECIES, speciesId))
+				File staticFile = HtmlFileChecker.check(getServletConfig().getServletContext().getRealPath("/"),
+						HtmlFileChecker.FILE_TYPE_SPECIES, speciesId);
+				response.setContentType("text/html;charset=UTF-8");
+				PrintWriter out = response.getWriter();
+				BufferedReader bufferedReader = new BufferedReader(new FileReader(staticFile));
+				String line = null;
+				while ((line = bufferedReader.readLine()) != null)
 				{
-					// 页面跳转
-					response.sendRedirect("../" + HtmlFileChecker.FILE_TYPE_SPECIES + File.separator
-							+ String.valueOf(speciesId) + ".html");
-					return;
+					out.write(line);
 				}
+				bufferedReader.close();
 			}
-			response.sendRedirect("../error.jsp");
+			else
+			{
+				response.sendRedirect("../error.jsp");
+			}
 		}
 	}
 

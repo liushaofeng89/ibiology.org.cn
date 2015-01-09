@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh">
 <head>
-
+	<base href="<%=basePath%>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +19,7 @@
     <link rel="shortcut icon" href="resource/img/site/favicon.ico" type="image/x-icon" />
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/ibiology.css" rel="stylesheet">
@@ -48,7 +51,7 @@
                     <small>联系我们</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="<%=request.getContextPath()%>/index">首页</a>
+                    <li><a href="<%=request.getContextPath()%>">首页</a>
                     </li>
                     <li class="active">联系我们</li>
                 </ol>
