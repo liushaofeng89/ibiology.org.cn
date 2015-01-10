@@ -7,7 +7,7 @@
 	<span class="icon-bar"></span>
 	<span class="icon-bar"></span>
 	</button>
-	<a class="navbar-brand" href="<%=request.getContextPath()%>/index">360°生物物语管理系统</a>
+	<a class="navbar-brand" href="<%=request.getContextPath()%>">360°生物物语管理系统</a>
 </div>
 <!-- Top Menu Items -->
 <ul class="nav navbar-right top-nav">

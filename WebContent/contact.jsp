@@ -178,13 +178,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			{
 				$.ajax({
 					   type: "POST",
-					   url: "/ibiology/UserFeedback",
+					   url: "<%=path%>/UserFeedback",
 					   data: "qq="+$("#qq").val()+"&email="+$("#email").val()+"&content="+msg,
 					   success: function(msg){
 					     if(msg=="true")
 					     {
 							alert("感谢你的建议/意见！");
-							location.href="<%=request.getContextPath()%>/index";
+							location.href="<%=request.getContextPath()%>";
 						 }else
 						 {
 							alert(msg); 

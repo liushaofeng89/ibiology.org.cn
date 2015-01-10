@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	                   	 对不起，您所请求的资源没有找到!
 	                </div>
 	                <div class="error-actions">
-	                    <a href="<%=request.getContextPath()%>/index" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
+	                    <a href="<%=request.getContextPath()%>" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
 	                        	返回首页 </a><a href="#" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-envelope"></span> 联系管理员 </a>
 	                </div>
 	            </div>
