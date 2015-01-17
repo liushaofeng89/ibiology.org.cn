@@ -12,13 +12,13 @@
 		<property name="speciesName" column="SpeciesName" type="java.lang.String" not-null="true"/>
 		<property name="speciesAliases" column="SpeciesAliases" type="java.lang.String" not-null="true"/>
 		<property name="speciesLatinName" column="SpeciesLatinName" type="java.lang.String" not-null="true"/>
-		<property name="speciesKingdom" column="SpeciesKingdom" type="java.lang.String" not-null="true"/>
-		<property name="speciesPhylum" column="SpeciesPhylum" type="java.lang.String" not-null="true"/>
-		<property name="speciesClass" column="SpeciesClass" type="java.lang.String" not-null="true"/>
-		<property name="speciesOrder" column="SpeciesOrder" type="java.lang.String" not-null="true"/>
-		<property name="speciesFamily" column="SpeciesFamily" type="java.lang.String" not-null="true"/>
-		<property name="speciesGenus" column="SpeciesGenus" type="java.lang.String" not-null="true"/>
-		<property name="speciesSpecies" column="SpeciesSpecies" type="java.lang.String" not-null="true"/>
+		<property name="speciesKingdom" column="SpeciesKingdom" type="java.lang.String" not-null="false"/>
+		<property name="speciesPhylum" column="SpeciesPhylum" type="java.lang.String" not-null="false"/>
+		<property name="speciesClass" column="SpeciesClass" type="java.lang.String" not-null="false"/>
+		<property name="speciesOrder" column="SpeciesOrder" type="java.lang.String" not-null="false"/>
+		<property name="speciesFamily" column="SpeciesFamily" type="java.lang.String" not-null="false"/>
+		<property name="speciesGenus" column="SpeciesGenus" type="java.lang.String" not-null="false"/>
+		<property name="speciesSpecies" column="SpeciesSpecies" type="java.lang.String" not-null="false"/>
 		<property name="speciesUpdateTime" column="SpeciesUpdateTime" type="java.util.Date" not-null="true"/>
 		<property name="speciesVisited" column="SpeciesVisited" type="java.lang.Integer" not-null="true"/>
 		<property name="speciesImage" column="SpeciesImage" type="java.lang.String" not-null="true"/>

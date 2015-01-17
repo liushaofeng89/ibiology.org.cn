@@ -145,7 +145,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!-- /.row -->
 
         <hr>
-
+            
         <!-- Content Row -->
         <div class="row">
             <div class="col-md-4">
@@ -178,7 +178,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		            			List<IbiologySpeciesModel> speciesList = indexModel.getSpeciesList();
 		            			if(!speciesList.isEmpty())
 		            			{
-		            				int tmp=speciesList.size()>5?5:speciesList.size();
+		            				int tmp=speciesList.size()>6?6:speciesList.size();
 		            			    for(int i=0;i<tmp;i++)
 		            			    {
 		            			    	out.println("<li><a href='./species/"+IbiologyIDUtil.encodingStrID(speciesList.get(i).getId())+".html'>"+speciesList.get(i).getSpeciesName()+"</a><span class='new-time'>["+DateUtil.dateToStr(speciesList.get(i).getSpeciesUpdateTime(),"MM-dd HH:mm")+"]</span></li>");
@@ -268,9 +268,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         
          <!-- Our Customers -->
         <div class="row">
-            <div class="col-lg-12"style="padding: 0">
+            <div class="col-lg-12" style="padding: 0">
             	<blockquote>
-            		植物点击榜
+            		动物点击榜
             	</blockquote>
 	            <div class="boxgrid captionfull col-md-2 col-sm-4 col-xs-6">
 	                <img class="img-responsive customer-img" src="resource/img/site/animal_top1.jpg" alt="">

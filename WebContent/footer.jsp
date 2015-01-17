@@ -10,7 +10,7 @@
 		Map<String,String> linksMap = indexModel.getLinksMap();
 		if(!linksMap.isEmpty())
 		{
-			out.print("<div class='row'><div class='col-lg-12'><blockquote><p>友情链接</p><small>");
+			out.print("<div class='row'><div class='col-lg-12' style='padding: 0'><blockquote><p>友情链接</p><small>");
 			for (String key : linksMap.keySet())
 			{
 				out.print("<a href='"+linksMap.get(key)+"' target='_blank'>"+key+"</a>&nbsp;&nbsp;");

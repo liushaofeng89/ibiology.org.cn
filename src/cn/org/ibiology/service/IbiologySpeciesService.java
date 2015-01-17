@@ -51,7 +51,7 @@ public class IbiologySpeciesService extends HttpServlet
 			if (speciesId != UNKNOWN)
 			{
 				// 检查生成数据文件
-				File staticFile = HtmlFileChecker.check(getServletConfig().getServletContext().getRealPath("/"),
+				File staticFile = HtmlFileChecker.check(getServletContext().getResource("/").getPath(),
 						HtmlFileChecker.FILE_TYPE_SPECIES, speciesId);
 				response.setContentType("text/html;charset=UTF-8");
 				PrintWriter out = response.getWriter();
