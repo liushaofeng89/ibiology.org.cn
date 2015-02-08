@@ -13,33 +13,35 @@ public final class IbiologyIDUtil
 	public static final int CONVERT_VALUE = 10000;
 
 	/**
-	 * encoding ID to a String
+	 * compile a String ID to show ID
 	 * 
 	 * @param ID the species ID in DB
 	 * @return string view ID
 	 */
-	public static final String encodingStrID(int id)
+	public static final String compile(String idStr)
 	{
-		return String.valueOf(id + CONVERT_VALUE);
+		int parseInt = Integer.parseInt(idStr);
+		return String.valueOf(parseInt + CONVERT_VALUE);
 	}
-	
+
 	/**
-	 * encoding ID to a Integer
+	 * compile a Integer ID to show ID
+	 * 
 	 * @param ID the species ID in DB
 	 * @return string view ID
 	 */
-	public static final int encodingIntID(int id)
+	public static final int compile(int id)
 	{
 		return id + CONVERT_VALUE;
 	}
 
 	/**
-	 * resovle a string to species ID in DB
+	 * decompilation a String ID to species ID in DB
 	 * 
 	 * @param id the view ID
 	 * @return the species ID in DB
 	 */
-	public static final int unEncodingID(String id)
+	public static final int decompilation(String id)
 	{
 		int parseInt;
 		try
@@ -53,4 +55,16 @@ public final class IbiologyIDUtil
 			return -1;
 		}
 	}
+
+	/**
+	 * decompilation a Integer ID to species ID in DB
+	 * 
+	 * @param id the view ID
+	 * @return the species ID in DB
+	 */
+	public static final int decompilation(int id)
+	{
+		return id - CONVERT_VALUE;
+	}
+
 }

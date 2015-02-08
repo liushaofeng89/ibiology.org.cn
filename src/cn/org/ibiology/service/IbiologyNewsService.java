@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cn.org.ibiology.IConstantKey;
-import cn.org.ibiology.hbm.dao.NewsDAO;
+import cn.org.ibiology.hbm.dao.IbiologyDAO;
 import cn.org.ibiology.hbm.model.NewsModel;
 
 /**
@@ -67,9 +67,7 @@ public class IbiologyNewsService extends HttpServlet
 
 		// 保存数据到数据库
 		String currentUser = (String) request.getSession().getAttribute(IConstantKey.USER_RIGHT_NAME);
-		boolean save = new NewsDAO().save(new NewsModel(title, newsContent, newsFrom, writer, currentUser));
+		boolean save = IbiologyDAO.save(new NewsModel(title, newsContent, newsFrom, writer, currentUser));
 		out.write(save ? "SUCCESS" : "数据保存失败！");
-
 	}
-
 }

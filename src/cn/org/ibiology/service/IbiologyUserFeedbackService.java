@@ -8,18 +8,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cn.org.ibiology.hbm.dao.UserFeedbackDAO;
+import cn.org.ibiology.hbm.dao.IbiologyDAO;
 import cn.org.ibiology.hbm.model.UserFeedbackModel;
 
 /**
  * 用户反馈消息服务类
+ * 
  * @author liushaofeng
  * @date 2014-12-4
  */
 public class IbiologyUserFeedbackService extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
-	private UserFeedbackDAO dao=null;
 
 	/**
 	 * constructor
@@ -27,7 +27,6 @@ public class IbiologyUserFeedbackService extends HttpServlet
 	public IbiologyUserFeedbackService()
 	{
 		super();
-		this.dao = new UserFeedbackDAO();
 	}
 
 	/**
@@ -52,7 +51,7 @@ public class IbiologyUserFeedbackService extends HttpServlet
 		String checkResult = checkInput(content);
 		if (checkResult == null)
 		{
-			writer.write(String.valueOf(dao.save(new UserFeedbackModel(qq, email, content))));
+			writer.write(String.valueOf(IbiologyDAO.save(new UserFeedbackModel(qq, email, content))));
 		}
 		else
 		{
@@ -62,6 +61,7 @@ public class IbiologyUserFeedbackService extends HttpServlet
 
 	/**
 	 * 检查输入是否合法
+	 * 
 	 * @param content 用户反馈内容校验
 	 * @return 是否合法
 	 */

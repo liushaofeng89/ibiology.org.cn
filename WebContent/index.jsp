@@ -181,7 +181,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		            				int tmp=speciesList.size()>6?6:speciesList.size();
 		            			    for(int i=0;i<tmp;i++)
 		            			    {
-		            			    	out.println("<li><a href='./species/"+IbiologyIDUtil.encodingStrID(speciesList.get(i).getId())+".html'>"+speciesList.get(i).getSpeciesName()+"</a><span class='new-time'>["+DateUtil.dateToStr(speciesList.get(i).getSpeciesUpdateTime(),"MM-dd HH:mm")+"]</span></li>");
+		            			    	out.println("<li><a href='./species/"+IbiologyIDUtil.compile(speciesList.get(i).getId())+".html'>"+speciesList.get(i).getSpeciesName()+"</a><span class='new-time'>["+DateUtil.dateToStr(speciesList.get(i).getSpeciesUpdateTime(),"MM-dd HH:mm")+"]</span></li>");
 		            			    }
 		            			}
 		            			else

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cn.org.ibiology.hbm.dao.LinksDAO;
+import cn.org.ibiology.hbm.dao.IbiologyDAO;
 import cn.org.ibiology.hbm.model.LinksModel;
 import cn.org.ibiology.util.DateUtil;
 
@@ -18,13 +18,13 @@ import com.google.gson.Gson;
 
 /**
  * 友情链接服务类
+ * 
  * @author liushaofeng
  * @date 2014-12-9
  */
 public class IbiologyLinksService extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
-	private LinksDAO dao = null;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -32,7 +32,6 @@ public class IbiologyLinksService extends HttpServlet
 	public IbiologyLinksService()
 	{
 		super();
-		this.dao = new LinksDAO();
 	}
 
 	/**
@@ -40,7 +39,7 @@ public class IbiologyLinksService extends HttpServlet
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		List<Object> findAll = dao.findAll();
+		List<Object> findAll = IbiologyDAO.findAllByOrderByTime("LinksModel", "createDate", false);
 		Gson gson = new Gson();
 		response.getWriter().write(gson.toJson(findAll));
 	}
@@ -83,7 +82,7 @@ public class IbiologyLinksService extends HttpServlet
 	private boolean saveToDB(String siteName, String siteAddress, String effectiveTime)
 	{
 		Date date = DateUtil.strToDate(effectiveTime);
-		return dao.save(new LinksModel(siteName, siteAddress, date));
+		return IbiologyDAO.save(new LinksModel(siteName, siteAddress, date));
 	}
 
 }

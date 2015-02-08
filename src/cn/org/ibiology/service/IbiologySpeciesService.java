@@ -2,6 +2,7 @@ package cn.org.ibiology.service;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,7 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.org.ibiology.hbm.dao.IbiologyDAO;
+import cn.org.ibiology.hbm.model.IbiologySpeciesModel;
 import cn.org.ibiology.util.HtmlFileChecker;
+import cn.org.ibiology.util.IbiologyIDUtil;
 import cn.org.ibiology.util.IbiologyIntValidator;
 
 /**
@@ -39,20 +43,35 @@ public class IbiologySpeciesService extends HttpServlet
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		String uri = request.getRequestURI().toString();
-		String idAddress = uri.substring(uri.indexOf("species/") + 8);
-		if (idAddress.isEmpty())// 请求物种目录
+		if (!uri.contains("species/"))
 		{
+			return;
+		}
+		String idAddress = uri.substring(uri.indexOf("species/") + 8);
+		if (idAddress.isEmpty())
+		{
+			// 请求物种目录
 			showSpeciesList();
 		}
 		else
-		// 请求某一物种
 		{
-			int speciesId = resovleAddress(idAddress);
-			if (speciesId != UNKNOWN)
+			// 请求某一物种
+			resolveSpecies(response, idAddress);
+		}
+	}
+
+	private void resolveSpecies(HttpServletResponse response, String idAddress) throws IOException,
+			FileNotFoundException
+	{
+		int showId = resovleAddress(idAddress);
+		IbiologySpeciesModel dataModel = (IbiologySpeciesModel) IbiologyDAO.findByID("IbiologySpeciesModel",
+				IbiologyIDUtil.decompilation(showId));
+		if (showId != UNKNOWN)
+		{
+			File staticFile = HtmlFileChecker.handFile(getServletContext(), HtmlFileChecker.FILE_TYPE_SPECIES, showId,
+					dataModel);
+			if (staticFile != null)
 			{
-				// 检查生成数据文件
-				File staticFile = HtmlFileChecker.check(getServletContext().getResource("/").getPath(),
-						HtmlFileChecker.FILE_TYPE_SPECIES, speciesId);
 				response.setContentType("text/html;charset=UTF-8");
 				PrintWriter out = response.getWriter();
 				BufferedReader bufferedReader = new BufferedReader(new FileReader(staticFile));
@@ -65,8 +84,12 @@ public class IbiologySpeciesService extends HttpServlet
 			}
 			else
 			{
-				response.sendRedirect("../error.jsp");
+				System.out.println("get HTML file fail,the file detail：" + staticFile);
 			}
+		}
+		else
+		{
+			response.sendRedirect("../error.jsp");
 		}
 	}
 

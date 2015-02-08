@@ -44,7 +44,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<jsp:include page="header.jsp"></jsp:include>
 
-	<div class="container">
+	<div class="container" style="min-height: 600px;">
 	    <div class="row">
 	        <div class="col-md-12">
 	            <div class="error-template">
