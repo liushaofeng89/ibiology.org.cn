@@ -6,11 +6,17 @@
     <session-factory>
     	<!--指定连接数据库用的驱动-->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <!--指定连接数据库的路径jdbc:mysql://sqld.duapp.com:4050/KrmlvYtGuPhRYlnIlmkd-->
+        <!--BAE指定连接数据库的路径jdbc:mysql://sqld.duapp.com:4050/KrmlvYtGuPhRYlnIlmkd-->
+        <!--LOCAL指定连接数据库的路径jdbc:mysql://localhost:3306/KrmlvYtGuPhRYlnIlmkd-->
+        <!--ECS指定连接数据库的路径jdbc:mysql://rdsi7vziffiuyuj.mysql.rds.aliyuncs.com:3306/ibiology_db-->
         <property name="connection.url">jdbc:mysql://localhost:3306/KrmlvYtGuPhRYlnIlmkd</property>
-        <!--指定连接数据库的用户名QdUwoaIjS61b6XAGmXkQ3WGT-->
+        <!--BAE指定连接数据库的用户名QdUwoaIjS61b6XAGmXkQ3WGT-->
+        <!--LOCAL指定连接数据库的用户名root-->
+        <!--ECS指定连接数据库的用户名liushaofeng-->
         <property name="connection.username">root</property>
-        <!--指定连接数据库的密码FlDLmM6LcFGBZyvLhtvbsWqBlOZ0GZnU-->
+        <!--BAE指定连接数据库的密码FlDLmM6LcFGBZyvLhtvbsWqBlOZ0GZnU-->
+        <!--LOCAL指定连接数据库的密码Huawei@345-->
+        <!--ECS指定连接数据库的密码liu891231-->
         <property name="connection.password">Huawei@345</property>
         <!--指定数据库使用的SQL方言-->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>

@@ -56,16 +56,8 @@ public final class HtmlFileChecker
 				if (!folder.exists())
 				{
 					folder.mkdirs();
-					System.out.println("create dir " + fileType + "success......");
 				}
-				if (!staticFile.createNewFile())
-				{
-					System.out.println("create html file " + id + ".html fail......");
-				}
-				else
-				{
-					System.out.println("create html file " + id + ".html success......");
-				}
+				staticFile.createNewFile();
 			}
 			catch (IOException e)
 			{
@@ -73,26 +65,27 @@ public final class HtmlFileChecker
 				return null;
 			}
 			// write data to file
-			writeDataToFile(staticFile, fileType, servletContext, dataModel);
+			writeDataToFile(staticFile, fileType, filePath, dataModel, servletContext);
 		}
 		return staticFile;
 	}
 
-	private static void writeDataToFile(File staticFile, String fileType, ServletContext servletContext,
-			IbiologySpeciesModel dataModel)
+	private static void writeDataToFile(File staticFile, String fileType, String filePath,
+			IbiologySpeciesModel dataModel, ServletContext servletContext)
 	{
 		BufferedWriter bufferedWriter = null;
 		BufferedReader tplReader = null;
 		try
 		{
 			bufferedWriter = new BufferedWriter(new FileWriter(staticFile));
-			tplReader = new BufferedReader(new FileReader(new File(servletContext.getRealPath("/templates/" + fileType
-					+ ".tpl"))));
-
+			tplReader = new BufferedReader(new FileReader(new File(servletContext.getRealPath("/templates"
+					+ File.separator + fileType + ".tpl"))));
+			System.out.println("path view:"
+					+ servletContext.getRealPath("/" + fileType + File.separator + fileType + ".tpl"));
 			String line = "";
 			while ((line = tplReader.readLine()) != null)
 			{
-				bufferedWriter.write(resovleData(line, dataModel, servletContext));
+				bufferedWriter.write(resovleData(line, dataModel));
 			}
 			bufferedWriter.flush();
 		}
@@ -104,17 +97,25 @@ public final class HtmlFileChecker
 		{
 			try
 			{
-				bufferedWriter.close();
-				tplReader.close();
+				if (bufferedWriter != null)
+				{
+					bufferedWriter.close();
+				}
+				if (tplReader != null)
+				{
+					tplReader.close();
+				}
 			}
 			catch (IOException e)
 			{
 				Logger.getLogger(HtmlFileChecker.class).error(e.getMessage(), e);
 			}
 		}
+		System.out.println("path view:"
+				+ servletContext.getRealPath("/" + fileType + File.separator + fileType + ".tpl"));
 	}
 
-	private static String resovleData(String line, IbiologySpeciesModel dataModel, ServletContext servletContext)
+	private static String resovleData(String line, IbiologySpeciesModel dataModel)
 	{
 		if (line.contains("{SPECIES}"))
 		{
