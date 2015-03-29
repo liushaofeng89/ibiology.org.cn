@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+﻿<!DOCTYPE html><html lang="en"><head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -141,7 +139,7 @@
 				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-th-list"></i> 品种分类</a></li>
 				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-lemon-o"></i> 生长特性</a></li>
 				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-globe"></i> 分布区域</a></li>
-				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-warning"></i> 价值与危害</a></li>
+				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-warning"></i> 价值危害</a></li>
 				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-bug"></i> 养殖方法</a></li>
 				   <li><a href="#ios" data-toggle="tab"><i class="fa fa-medkit"></i> 病虫防疫</a></li>
 				   <li class="dropdown">
