@@ -197,7 +197,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="col-md-4">
             	<div class="panel panel-default">
 	            	<div class="panel-heading">
-	              		<h2 class="panel-title"><i class="fa fa-newspaper-o"></i> 相关文章<small><a href="">more&nbsp;&raquo;</a></small></h2>
+	              		<h2 class="panel-title"><i class="fa fa-newspaper-o"></i> 爱帮生活<small><a href="">more&nbsp;&raquo;</a></small></h2>
 	            	</div>
 		            <div class="panel-body">
 		            	<ul class="list-unstyled">

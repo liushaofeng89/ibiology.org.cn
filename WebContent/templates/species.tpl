@@ -54,7 +54,7 @@
 			        	</form>
 					</li> -->
 					<li>
-						<a href=" href="{LINK_HOME}""><i class="fa fa-home"></i> 首页</a>
+						<a href="{LINK_HOME}"><i class="fa fa-home"></i> 首页</a>
 					</li>
 					<li>
 						<a href="florid.jsp"><i class="fa fa-gift"></i> 花语</a>

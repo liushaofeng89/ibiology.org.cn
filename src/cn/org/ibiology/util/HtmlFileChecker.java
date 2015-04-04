@@ -117,7 +117,7 @@ public final class HtmlFileChecker
 
         if (line.contains("{LINK_HOME}"))
         {
-            line = line.replace("{LINK_HOME}", "../index.jsp");
+            line = line.replace("{LINK_HOME}", "../index");
         }
         return line;
     }

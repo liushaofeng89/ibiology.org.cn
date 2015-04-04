@@ -121,13 +121,6 @@
 	<servlet>
 		<description>
 		</description>
-		<display-name>IbiologyArticleService</display-name>
-		<servlet-name>IbiologyArticleService</servlet-name>
-		<servlet-class>cn.org.ibiology.service.IbiologyArticleService</servlet-class>
-	</servlet>
-	<servlet>
-		<description>
-		</description>
 		<display-name>IbiologySpeciesService</display-name>
 		<servlet-name>IbiologySpeciesService</servlet-name>
 		<servlet-class>cn.org.ibiology.service.IbiologySpeciesService</servlet-class>
@@ -181,10 +174,6 @@
 	<servlet-mapping>
 		<servlet-name>IbiologyLinksService</servlet-name>
 		<url-pattern>/LinksService</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>IbiologyArticleService</servlet-name>
-		<url-pattern>/article/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>IbiologySpeciesService</servlet-name>
